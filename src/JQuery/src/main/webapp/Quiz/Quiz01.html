@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>간단한 회원 정보 양식</title>
+</head>
+<body>
+	<center>
+	<br>
+	<h1>간단한 회원 정보 양식 </h1>
+	<br>
+		<table border="1" bordercolor="green" bgcolor="lightgray" width="800" >
+			<tr height="50">
+				<td width="20%" align="center"><h3><b>이름</b></h3></td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr height="50">
+				<td  width="20%" align="center"><h3><b>암호</b></h3></td>
+				<td><input type="password" name=""></td>
+			</tr>
+			<tr height="50">
+				<td  width="20%" align="center"><h3><b>전화번호</b></h3></td>
+				<td><input type="tel"> - <input type="tel"> - <input type="tel"></td>
+			</tr>
+			<tr height="50">
+				<td width="20%" align="center"><h3><b>직업</b></h3></td>
+				<td>
+				<select>
+					<option>학생</option>
+					<option>직장</option>
+					<option>주부</option>
+				</select>
+				</td>
+			</tr>
+			<tr height="50">
+				<td width="20%" align="center" ><h3><b>성별</b></h3></td>
+				<td>
+				<input type="radio" id="female" name="남자" value="남자">
+				<input type="radio" id="male" name="여자" value="여자">
+				</td>
+			</tr>
+			<tr height="50">
+				<td width="20%" align="center" ><h3><b>취미</b></h3></td>
+				<td>
+				<input type="radio" id="male" name="" value="바둑">
+				<input type="radio" id="male" name="" value="게임">
+				<input type="radio" id="male" name="" value="낚시">
+				<input type="radio" id="male" name="" value="독서">
+				</td>
+			</tr>
+			<tr height="50">
+				<td width="20%" align="center" ><h3><b>자기 소개하는 글</b></h3></td>
+				<td><textarea rows="3" cols="80" value='자기를 소개하는 글을  쓰세요.'></textarea></td>
+			</tr>
+			<tr height="50">
+				<td colspan="2" align="center">
+				<input type ="submit" value="등록하기"> 
+				<input type ="reset" value="취소하기">				
+				</td>
+			</tr>
+		</table> 
+			
+	</center>
+</body>
+</html>

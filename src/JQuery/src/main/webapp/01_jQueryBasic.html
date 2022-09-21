@@ -1,0 +1,163 @@
+<!-- jQuery 기본
+	1. jQuery 개요
+		- 모든 브라우저에서 동작하는 클라이언트 자바스크립트 라이브러리.
+		- 다음의 기능을 위해 제작
+			. DOM과 관련된 처리를 쉽게 구현
+			. 일관된 이벤트 연결을 쉽게 구현
+			. 시각적 효과를 쉽게 구현
+			. ajax 애플리케이션을 쉽게 구현
+
+		- https://jquery.com
+		- jQuery 사용 방법
+			1) 직접 다운받아 사용하는 방법.
+			2) CDN 호스트 사용하는 방법.
+				 . Content Delivery Network
+				 . 사용자에게 간편하게 콘텐츠를 제공하는 방식을 의미.
+				 . 구글, 마이크로소프트, jQuery측에서 사용자가 jQuery를 사용하기 편하게 콘텐츠를 제공.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 태그 구조</title>
+
+<style type="text/css">
+
+</style>
+
+<!-- 방법1. 직접 다운로드  -->
+<script src="./js/jquery-3.6.1.js"></script>
+
+<!-- 방법2. CDN 방식
+<script type="https://code.jquery.com/jquery-3.6.1.min.js"></script>-->
+
+<script type="text/javascript">
+/* 1. 라이브러리를 포함 방법  : 2가지 방식
+ 		- 방법 1, 방법 2참조
+ */
+ $(function() { 
+ /* 2. jQuery를 사용한 웹페이지 형식
+ 	- $(document).ready(function(){});   jQuery는 $와 같다.
+ 		. 문서가 준비 완료되면 매개변수(매서드_특정된 기능)로 전달된 함수(범용적인 기능)를 실행하라는 의미.
+ 		. $(function(){}); //간단한 형식 정의.
+ 
+ 		alert('First Ready');
+	 */
+	 
+/* 3. jQuery 기본 선택자 : 선택을 해주는 요소
+	 var headers = document.getElementsByTagName('h1');
+	 
+	 headers[0].innerHTML = "더 조은";
+	 headers[1].innerHTML = "컴퓨터 학원";
+	 
+	 1) 전체 선택자(*)
+	 
+		$('*').css('color', 'red')	 
+	
+	2) tag 선택자;
+	
+		- 한 개 태그 선택
+		$('p').css('color', 'blue')	 
+		- 여러 개 태그 선택
+		$('p,h1').css('color', 'blue')	 
+	
+	3) id 선택자
+		$('#target').css('color', 'blue')	 
+	
+	 4) class 선택자
+	 
+	*/
+
+		$('.item').css('color', 'green')	 
+	 
+	 /* 
+	 
+	 
+	 */ 
+	 
+ 
+ });
+</script>
+
+</head>
+<body>
+
+
+<!-- 3-1/3-2. 전체/태그 선택자 
+	<h1>Lorem ipsum</h1>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<h1>Lorem ipsum</h1>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<hr> -->
+
+
+<!-- 3-3. 아이디 선택자 
+	<h1  >Header-0</h1>
+    <h1 id="target">Header-1</h1>
+    <h1>Header-2</h1>
+    <hr> --> 
+
+
+<!-- -->3-4. 클래스 선택자 
+    <h1 class="item">Header-0</h1>
+    <h1 class="item select">Header-1</h1>
+    <h1 class="item">Header-2</h1>
+    <hr>
+
+
+<!-- 4. 자식(손) 선택자와 후손 선택자 
+	<div>
+		<ul>
+			<li>Apple</li>
+			<li>Bag</li>
+			<li>Cat</li>
+			<li>Dog</li>
+		</ul>
+	</div>
+    <hr>
+-->
+
+<!-- 5. 속성 선택자 
+    <input type="text"/></br>
+    <input type="password"/></br>
+    <input type="radio"/></br>
+    <input type="checkbox"/></br>
+    <input type="file"/></br>
+    <hr>
+-->
+
+<!-- 6-1. 입력 양식 필터 선택자 
+	<select>
+		<option>Apple</option>
+		<option>Bag</option>
+		<option>Cat</option>
+		<option>Dog</option>
+	</select>
+    <hr>
+-->
+
+<!-- 6-2/6-3. 필터선택자 
+	<table border="1">
+		<tr><th>이름</th><th>혈액형</th><th>지역</th></tr>
+		<tr><td>홍길동</td><td>AB형</td><td>서울시 강남구</td></tr>
+		<tr><td>홍길서</td><td>A형</td><td>서울시 마포구</td></tr>
+		<tr><td>홍길남</td><td>B형</td><td>서울시 서초구</td></tr>
+		<tr><td>홍길북</td><td>O형</td><td>서울시 송파구</td></tr>
+		<tr><td>김길동</td><td>O형</td><td>서울시 영등포구</td></tr>
+		<tr><td>이길동</td><td>A형</td><td>서울시 강서구</td></tr>
+		<tr><td>박길동</td><td>B형</td><td>서울시 용산구</td></tr>
+	</table>
+	<hr>
+-->
+
+<!-- 8. jQuery를 사용한 배열 관리(2) 
+	<h1>item - 0</h1>
+	<h1>item - 1</h1>
+	<h1>item - 2</h1>
+	<h1>item - 3</h1>
+	<h1>item - 4</h1>
+-->
+
+</body>
+</html>
