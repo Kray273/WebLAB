@@ -23,99 +23,269 @@
 <title>jQuery 태그 구조</title>
 
 <style type="text/css">
-
+ .high-light-0{ background-color: yellow;}
+ .high-light-1{ background-color: black;}
+ .high-light-2{ background-color: gray;}
+ .high-light-3{ background-color: navy;}
+ .high-light-4{ background-color: maroon;}
 </style>
 
-<!-- 방법1. 직접 다운로드  -->
+<!-- 방법1. 직접 다운로드 -->
 <script src="./js/jquery-3.6.1.js"></script>
 
-<!-- 방법2. CDN 방식
-<script type="https://code.jquery.com/jquery-3.6.1.min.js"></script>-->
 
+<!-- 방법2. CDN 방식 
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+-->
 <script type="text/javascript">
-/* 1. 라이브러리를 포함 방법  : 2가지 방식
- 		- 방법 1, 방법 2참조
- */
- $(function() { 
- /* 2. jQuery를 사용한 웹페이지 형식
- 	- $(document).ready(function(){});   jQuery는 $와 같다.
- 		. 문서가 준비 완료되면 매개변수(매서드_특정된 기능)로 전달된 함수(범용적인 기능)를 실행하라는 의미.
- 		. $(function(){}); //간단한 형식 정의.
- 
- 		alert('First Ready');
-	 */
-	 
-/* 3. jQuery 기본 선택자 : 선택을 해주는 요소
-	 var headers = document.getElementsByTagName('h1');
-	 
-	 headers[0].innerHTML = "더 조은";
-	 headers[1].innerHTML = "컴퓨터 학원";
-	 
-	 1) 전체 선택자(*)
-	 
-		$('*').css('color', 'red')	 
-	
-	2) tag 선택자;
-	
-		- 한 개 태그 선택
-		$('p').css('color', 'blue')	 
-		- 여러 개 태그 선택
-		$('p,h1').css('color', 'blue')	 
-	
-	3) id 선택자
-		$('#target').css('color', 'blue')	 
-	
-	 4) class 선택자
-		$('.item').css('color', 'green')	 
-		$('h1.item').css('color', 'red')	 tag와 클래스 동시 지정
-		$('.item.select').css('color', 'gray')	다수 클래스 지정
+$(document).ready(function(){
+/* 1. 라이브러리 포함 방법 : 2가지 방식
+	- 방법1, 방법2 참조
 */
 
-	 
-/* 
-	4. 자식(손) 선택자와 후손 선택자
-	-자식(손) 선택자
-	$('body>*').css('color', 'green');
-	- 후손 선택자	 
-	$('body div').css('color', 'blue');
-*/  
+/* 2. jQuery를 사용한 웹 페이지 형식
+	- $(document).ready(function(){});
+	  . 문서가 준비 완료되면 매개변수로 전달된 함수를 실행하라는 의미.
+	  . $(function(){}); // 간단한 형식 정의.
 
-/* 
-	5. 속성 선택자
+		alert('First Ready');
+*/
+
+/* 3. jQuery 기본 선택자 
+	var headers = document.getElementsByTagName('h1');
+	
+	headers[0].innerHTML = '더조은';
+	headers[1].innerHTML = '컴퓨터 학원';
+
+	1) 전체 선택자(*)
+		$('*').css('color', 'red');
+
+	2) tag 선택자
+		- 한 개 태그 선택
+			$('p').css('color', 'blue');
+		- 두 개 이상의 태그 선택
+			$('h1, p').css('color', 'blue');
+
+	3) id 선택자
+		$('#target').css('color', 'blue');
+	
+	4) class 선택자
+		$('.item').css('color', 'green');
+		$('h1.select').css('color', 'red');
+		$('.item.select').css('background', 'blue');
+*/
+
+/* 4. jQuery 자식(손) 선택자와 후손 선택자
+	- 자식(손) 선택자
+		$('body > div').css('color', 'blue');
+	- 후손 선택자
+		$('body div').css('color', 'blue');
+*/	
+		
+/* 5. jQuery 속성 선택자 
 	- 기본 선택자 뒤에 붙여 사용.
 	- 입력 양식과 관련된 태그를 선택할 때 많이 사용.
+
+	  $('input[type=text]').val('Hello jQuery..!');
+*/ 	  
+	  
+/* 6. jQuery 필터 선택자 
+// 1) 입력 양식 필터 선택자 
+//	    .input:button
+//	    .input:checkbox
+//	    .input:radio
+//	    .input:file
+//	    .input:image
+//	    .input:password
+//	    .input:text
+//	    .input:submit
+//	    .input:reset
+
+//	    .요소:checked
+//	    .요소:disabled
+//	    .요소:enabled
+//	    .요소:focus
+//	    .요소:selected 
+
+
+		setTimeout(function() {
+			var value = $('select > option:selected').val();
+			alert(value);
+		}, 2000);
+		*/
+ 
+		
+	
+		
+		/*
+// 2) 위치 필터 선택자
+//   . 선택자를 사용해 문서 객체를 선택한 후에 다음과 같은 위치를 지정한다.
+//	       >> 요소:odd -> 홀수 번째에 위치한 문서 객체 선택.
+//	       >> 요소:even -> 짝수 번째에 위치한 문서 객체 선택.
+//	       >> 요소:first -> 첫번째에 위치한 문서 객체 선택.
+//	       >> 요소:last -> 마지막에 위치한 문서 객체 선택.
+
+
+			$('tr:odd').css('background', 'silver'); // index 0부터 카운팅
+			$('tr:even').css('background', '#9F9F9F');
+			$('tr:first').css('background', '#000000').css('color', '#FFFFFF');
+
+			*/
+
+			 
+					
+			
+/*
+// 3) 함수 필터 선택자
+//   >> 요소:contains(문자열)
+//	       ->특정 문자열을 포함하는 문서 객체를 선택.
+//   >> 요소:eq(n)
+//	       ->n번째에 위치하는 문서 객체를 선택.
+//   >> 요소:gt(n)
+//	       ->n번째 초과하는 위치에 있는 문서 객체를 선택.
+//   >> 요소:has(h1)
+//	       ->h1 태그를 가지고 있는 문서 객체를 선택.
+//   >> 요소:lt(n)
+//	       ->n번째 미만에 위치하는 문서 객체를 선택.
+//   >> 요소:not(선택자)
+//	       ->선택자와 일치하지 않는 문서 객체를 선택.
+//   >> 요소:nth-child(3n+1) (단, n = 0, 1, ...)
+//	       -> 3n+1번째에 위치하는 문서 객체를 선택(인덱스 1부터 카운팅).
+
+		$('tr:eq(0)').css('background', 'black').css('color', 'white');
+		$('tr:nth-child(3n+1)').css('background', 'green');
+		$('tr:nth-child(3n+2)').css('background', 'red');
+		$('tr:nth-child(3n)').css('background', 'blue');
 */
- 
- 	$('input[type=text]').val('Hello jQuery..!');
- 
- });
+
+
+		/*
+ 7. jQuery를 사용한 배열 관리(1) 
+// - each() 메서드 사용
+//	    . 매개 변수로 입력한 함수 사용.
+//	    . for in 반복문처럼 객체나 배열의 요소 검사하는 메서드
+
+// - each() 메서드의 형태
+//	    1. $.each(object, function(index, item){});
+
+
+			var array = [{name:'Naver', link:'https://www.naver.com'}, 
+							   {name:'Daum', link:'https://www.daum.net'}, 
+							   {name:'Nate', link:'https://www.nate.com'}];
+			
+			$.each(array, function(index, item){
+				var output = '';
+				
+				output += '<a href="'+item.link+'" >';
+				output += '<h1>' + item.name + '</h1>';
+				output += '</a>';
+				
+				document.body.innerHTML += output; 
+			});
+
+	// */
+
+
+	/* 8. jQuery를 사용한 배열 관리(2) 
+	// - 각 객체에 서로 다른 class 속성을 설정하고 싶을 때 each() 메서드 사용.
+		// 예제 1.
+
+			$('h1').addClass('high-light');
+
+
+		// 예제2
+		//  - each() 메서드의 형태
+		//    2. $(selector).each(function(index, item){});
+	 			
+
+	 			$('h1').each(function(index, item){
+	 				$(item).addClass('high-light-'+index);
+	 				//$(this).addClass('high-light-'+index);
+	 			});
+
+
+		// 예제3 : addClass() 메서드의 매개변수에 함수 전달도 가능.
+
+	 			$('h1').addClass(function(index){
+	 				return 'high-light-'+index;
+	 			});
+	// */
+
+/*
+	 9. jQuery를 사용한 객체 확장 
+		// - 자바스크립트에서의 객체 속성 추가
+		
+
+			var object = {};
+			
+			object.name = '홍길동';
+			object.gender = '남자';
+			object.part = '영업';
+
+
+		// - jQuery에서의 객체 속성 추가
+		//    . extend() 메서드
+		
+
+			var object = {name:'홍길동'};
+			
+			$.extend(object, {
+				gender:'남자', 
+				part:'영업'
+			});
+			
+			var output = '';
+			$.each(object, function(index, item){
+				output += index + ' : ' + item+'\n';
+			});
+			
+			alert(output);
+	// */ 
+
+
+	/* 10. jQuery 라이브러리 충돌 방지 
+	// - jQuery외 prototype 자바스크립트 라이브러리도 동일하게 $를 
+	//	    식별자로 사용. 
+	// - 따라서 두 라이브러리를 함께 사용시 충돌 발생.
+
+		// 더 이상 식별자 $를 사용할 수 없다.
+	// */
+		$.noConflict();
+		
+		var J = jQuery;
+		
+		J(document).ready(function(){
+			J('h1').addClass('high-light');
+		});
+	  
+});
 </script>
 
 </head>
 <body>
-
 
 <!-- 3-1/3-2. 전체/태그 선택자 
 	<h1>Lorem ipsum</h1>
 	<p>Lorem ipsum dolor sit amet.</p>
 	<h1>Lorem ipsum</h1>
 	<p>Lorem ipsum dolor sit amet.</p>
-	<hr> -->
+	<hr>
+-->
 
-
-<!-- 3-3. 아이디 선택자 
-	<h1  >Header-0</h1>
+<!-- 3-3. 아이디 선택자
+	<h1>Header-0</h1>
     <h1 id="target">Header-1</h1>
     <h1>Header-2</h1>
-    <hr> --> 
-
+    <hr>
+ -->
 
 <!-- 3-4. 클래스 선택자 
     <h1 class="item">Header-0</h1>
     <h1 class="item select">Header-1</h1>
-    <h1 class="item">Header-2</h1>
-    <hr>-->
-
+    <h1 class="">Header-2</h1>
+    <h2 class="select">Header-3</h2>
+    <hr>
+-->
 
 <!-- 4. 자식(손) 선택자와 후손 선택자 
 	<div>
@@ -126,16 +296,16 @@
 			<li>Dog</li>
 		</ul>
 	</div>
-    <hr>-->
+    <hr>
+-->
 
-
-<!-- 5. 속성 선택자 -->
+<!-- 5. 속성 선택자 
     <input type="text"/></br>
     <input type="password"/></br>
     <input type="radio"/></br>
     <input type="checkbox"/></br>
     <input type="file"/></br>
-    <hr>
+    <hr>-->
 
 
 <!-- 6-1. 입력 양식 필터 선택자 
@@ -145,8 +315,8 @@
 		<option>Cat</option>
 		<option>Dog</option>
 	</select>
-    <hr>
--->
+    <hr>-->
+
 
 <!-- 6-2/6-3. 필터선택자 
 	<table border="1">
@@ -159,16 +329,16 @@
 		<tr><td>이길동</td><td>A형</td><td>서울시 강서구</td></tr>
 		<tr><td>박길동</td><td>B형</td><td>서울시 용산구</td></tr>
 	</table>
-	<hr>
--->
+	<hr>-->
 
-<!-- 8. jQuery를 사용한 배열 관리(2) 
+
+<!-- 8. jQuery를 사용한 배열 관리(2) -->
 	<h1>item - 0</h1>
 	<h1>item - 1</h1>
 	<h1>item - 2</h1>
 	<h1>item - 3</h1>
 	<h1>item - 4</h1>
--->
+
 
 </body>
 </html>
