@@ -3,44 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <title>간단한 회원 정보 양식</title>
+<style type="text/css">
+	table {
+ 		border: 1px solid #444444;
+ 		border-spacing : 0;
+ 		background-color: lightgray;
+ 		margin : auto; 
+ 		OR  ( margin-rigth : auto; margin-left : auto; )  		
+ 		 }
+ 	
+ 	tr {
+ 	 height: 50px;
+ 	}
+ 	tr, td{
+ 		border: 1px solid green;
+ 		padding-left: 5px;
+ 	}	 
+ 	
+ 	#tag{
+ 		text-align: center;
+ 		font-size: large;
+ 		font-weight: bold;
+ 		width: 200px;
+ 		}
+ 	
+ 	input[type=tel] {
+ 	 width: 50px;
+ 	}
+ 	
+ 	
+</style>
+
+
+
+
+<script type="text/javascript">
+	
+function check() {
+	   var h = "";
+	   var check = document.getElementsByName("habit");
+	      for(var i = 0; i<check.length; i++){
+	         if(check[i].checked){
+	            h += (check[i].value + " ");
+	         }
+	   
+	      } 
+	      
+	      alert('이름 : '+ form.name.value 
+	    		+'\n 암호 : '+ form.password.value 
+	    		+'\n 전화번호 : '+ form.tel1.value +'-'+ form.tel2.value +'-'+ form.tel3.value 
+	    		+'\n 직업 : '+ form.job.value
+	    		+'\n 성별 : '+ form.sex.value
+	    		+'\n 취미 : '+ h 
+	    		+'\n 자기 소개하는 글 : '+form.intro.value+'\n');
+	   }
+
+	   function C() {
+	      alert('취소되었습니다.');
+	   }
+
+</script>
+
 </head>
 <body>
-	<center>
-	<br>
-	<h1>간단한 회원 정보 양식 </h1>
-	<br>
+	<center><h1>간단한 회원 정보 양식 </h1>	<br></center>
+	<form action="Quiz01.html" method="post" name="form" onsubmit="check();" >
 		<table>
 			<tr>
-				<td>이름</td>
+				<td id="tag" >이름</td>
 				<td><input type="text" name="name"></td>
 			</tr>
 			<tr>
-				<td> 암호</td>
-				<td><input type="password" name=""></td>
+				<td id="tag"> 암호</td>
+				<td><input type="password" name="password"></td>
 			</tr>
 			<tr>
-				<td>전화번호</td>
-				<td><input type="tel" name="tel"> - <input type="tel" name="tel"> - <input type="tel" name="tel"></td>
+				<td id="tag">전화번호</td>
+				<td><input type="tel" name="tel1"> - <input type="tel" name="tel2"> - <input type="tel" name="tel3"></td>
 			</tr>
 			<tr>
-				<td >직업</td>
+				<td id="tag">직업</td>
 				<td>
 				<select>
-					<option>학생</option>
-					<option>직장</option>
-					<option>주부</option>
+					<option name="job" value="학생">학생</option>
+					<option name="job" value="직장">직장</option>
+					<option name="job" value="주부">주부</option>
 				</select>
 				</td>
 			</tr>
 			<tr >
-				<td>성별</td>
+				<td id="tag">성별</td>
 				<td>
-				<input type="radio" name="sex" value="남">남자
+				<input type="radio" name="sex" value="남" checked>남자
 				<input type="radio" name="sex" value="녀">여자
 				</td>
 			</tr>
 			<tr>
-				<td >취미</td>
+				<td id="tag" >취미</td>
 				<td>
 				<input type="checkbox"  name="habit" value="바둑">바둑
 				<input type="checkbox"  name="habit" value="게임">게임
@@ -49,17 +108,17 @@
 				</td>
 			</tr>
 			<tr >
-				<td >자기 소개하는 글</td>
-				<td><textarea rows="3" cols="80" name="textarea" placeholder="자기를 소개하는 글을 쓰세요."></textarea></td>
+				<td id="tag" >자기 소개하는 글</td>
+				<td><textarea rows="3" cols="80" name="intro" placeholder="자기를 소개하는 글을 쓰세요."></textarea></td>
 			</tr>
-			<tr >
-				<td colspan="2" >
-				<input type ="submit" value="등록하기"> 
-				<input type ="reset" value="취소하기">				
+			<tr>
+				<td colspan="2" id="tag" >
+				 <input type="submit" value="등록하기" >
+				<input type ="reset" value="취소하기" onclick="javascript:C()">		
 				</td>
 			</tr>
 		</table> 
-			
-	</center>
+	</form>
+
 </body>
 </html>

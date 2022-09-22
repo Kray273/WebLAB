@@ -30,7 +30,7 @@
 
 </style>
 
-<script src="./js/jquery-3.6.1.min.js"></script>
+<script src="./js/jquery-3.6.1.js"></script>
 <script type="text/javascript">
 
 /* 1. 이벤트 연결1 
@@ -46,7 +46,7 @@
 				});
 			});
 		});
-
+  
 //    2) $(selector).on(object);
 
 		$(function(){
@@ -132,6 +132,7 @@
 
 
 /* 6. 기본 이벤트 제거 
+ */
 	$(function(){
 		$('a').click(function(event){
 			var e = event || window.event;
@@ -151,6 +152,7 @@
 			$(this).css('background-color', 'red');
 		});
 	});
+/*
 // */
 
 /* 7. 이벤트 통합 메서드 
@@ -250,10 +252,10 @@
 -->
 
 <!-- 6. 기본 이벤트 제거 
+-->
     <h1>
         <a href="https://www.naver.com">네이버</a>
     </h1>
--->
 
 <!-- 7. 이벤트 통합 메서드 
     <div>

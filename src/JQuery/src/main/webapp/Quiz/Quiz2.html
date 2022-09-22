@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+
+<style type="text/css">
+
+table {
+background:yellow;
+border-color: black;
+width:700px;
+border: 3px solid;
+
+
+}
+th, td {
+border-color: red;
+
+
+}
+
+#td {
+width: 150px;
+
+}
+textarea {
+    width: 99%;
+    height: 6.25em;
+   
+    resize: none;
+  }
+
+
+</style>
+
+
+
+
+<script type="text/javascript">
+
+function btnI() {
+   
+
+   var hobby = "";
+      
+   var check = document.getElementsByName("h");
+      
+      for(var i = 0; i<check.length; i++){
+         if(check[i].checked){
+            hobby += (check[i].value + " ");
+         }
+   
+      } 
+      
+      alert('이름 : '+form.name.value+'  \n 암호 : '+form.password.value+'\n 전화번호 : '+form.tel1.value+'-'+form.tel2.value+'-'+form.tel3.value+' \n 직업 : '+form.job.value+'\n 성별 : '+form.s.value+'\n 취미 : ' + hobby +'\n 자기 소개하는 글 : '+form.info.value+'\n');
+   }
+
+
+   function btnC() {
+      alert('취소되었습니다.');
+   }
+</script>
+
+
+
+</head>
+<body>
+<center><h1>간단한 회원정보 입력 양식</h1></center>
+
+<form name="form" onsubmit=" btnI();" action="Quiz2.html" method="post" >
+   <center>
+
+      <table name="table"  border="1"  cellspacing="0" >
+
+         <tr>
+            <td align="center" id="td">이름</td>
+            <td><input type="text" name="name" id="name" placeholder="홍길동"></td>
+         </tr>
+
+         <tr>
+            <td align="center">암호</td>
+            <td><input type="password" name="password" placeholder="비밀번호를 입력해주세요"></td>
+         </tr>
+
+         <tr>
+            <td align="center">전화번호</td>
+            <td><input type="text" name="tel1" size="3" placeholder="010">-<input
+               type="text" name="tel2" size="4" placeholder="1234">-<input type="text"
+               name="tel3" size="4" placeholder="5678"></td>
+         </tr>
+
+         <tr>
+            <td align="center">직업</td>
+            <td><select name="job">
+                  <option value="학생">학생</option>
+                  <option value="직장">직장</option>
+                  <option value="주부">주부</option>
+            </select></td>
+         </tr>
+
+         <tr>
+            <td align="center">성별</td>
+            <td><input type="radio" name="s" value="남자" checked>남자 <input
+               type="radio" name="s" value="여자">여자</td>
+         </tr>
+
+         <tr>
+            <td align="center">취미</td>
+            <td><input type="checkbox" name="h" value="바둑">바둑 <input
+               type="checkbox" name="h" value="게임">게임 <input
+               type="checkbox" name="h" value="낚시">낚시 <input
+               type="checkbox" name="h" value="독서">독서</td>
+         </tr>
+
+         <tr>
+            <td align="center">자기 소개하는 글</td>
+            <td><textarea name="info" placeholder="자기를 소개하는 글을 쓰세요." ></textarea></td>
+         </tr>
+
+         <tr align="center">
+            <td colspan="2">
+            <input type="submit" value="등록하기">
+            
+               <button onclick="javascript:btnC()">취소하기</button>
+            </td>
+         </tr>
+
+      </table>
+
+   </center>
+
+</form>
+
+</body>
+</html>
