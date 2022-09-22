@@ -2,7 +2,7 @@
  
 Day57 https://www.notion.so/Day57_Mybatis-068df85f92454b128d73f500012687c3
 
-Day58
+Day58 https://www.notion.so/Day58_-_-e5c11f0c591247c08fd58805e7ab4638
 
 Day59
 
