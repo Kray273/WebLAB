@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트로 Ajax 구현하기</title>
+
+<script type="text/javascript">
+   window.onload = function(){//window는 jQuery의 ready와 같음.onload는 이벤트 관련 속성
+      var xhr;//js의 변수는 var 하나.
+      var container;
+      var containerA;
+      
+      if(window.XMLHttpRequest){//모든 대부분의 브라우저에서 작동.
+         xhr = new XMLHttpRequest();   // Ajax 메모리 할당.
+      }else if(window.ActiveXObject){ //window8 이하는 ActiveX로 작동을 설정해놈.
+         xhr = new ActiveXObject("Msxmi2.XMLHTTP");         
+      }else{
+         throw new Error("Ajax가 지원하지 않는 브라우저 입니다.")
+      }
+      
+      containerA = document.getElementById('container'); //containerA에 HTML에서 받은 Id 값을 전달.
+      
+      xhr.onreadystatechange = function(){ // 
+         if(xhr.readyState == 4){ 
+        	 //readyState0은 시작, 1은 정보설정, 2는 매서드로 요청을 보내면, 3은 서버에서 응답이오면, 4는 응답완료 
+            if(xhr.status >= 200 && xhr.status < 300){ //정상적인 응답 200. 찾지못하면 404!
+               container = document.getElementById('container');
+               container.innerHTML = xhr.responseText;//서버에 응답 내용을 나타내는 문자열
+            }
+         }
+      };
+      
+      containerA.onclick = function(){ //클릭시 container실행.
+         xhr.open('get','resource.html'); //서버연결.전송방식과 요청할 페이지
+         xhr.send(); //서버연결.?
+      };
+   };   
+</script>
+
+
+
+</head>
+<body>
+
+	<div id="container">서버 요청</div>
+
+</body>
+</html>
