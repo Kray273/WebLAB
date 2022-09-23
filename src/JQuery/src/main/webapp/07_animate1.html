@@ -11,7 +11,17 @@
     </style>
     <script src="./js/jquery-3.6.1.js"></script>
     <script>
-        
+        $(function(){
+        	$('div').hover(function(){
+       			$(this).animate({
+       				left:500
+       			},'slow');	
+        	},function(){
+       			$(this).animate({
+       				left:0
+       			},'slow');	        		
+        	});
+        });
     </script>
 </head>
 <body>
