@@ -25,7 +25,7 @@
 <h2>내 스키마의 템플릿</h2>
 <table class="entity" cellpadding="0" cellspacing="0">
     <tr>
-        <td colspan="6" class="header">User (userMember)</td>
+        <td colspan="6" class="header">User (userM)</td>
     </tr>
     <tr class="column-header">
         <td>논리명</td>
@@ -51,106 +51,10 @@
         <td>Y</td>
         <td>&nbsp;</td>
     </tr>
-    <tr>
-        <td>닉네임</td>
-        <td>um_ars</td>
-        <td>N/A</td>
-        <td>VARCHAR2(10)</td>
-        <td>Y</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>회원등급</td>
-        <td>um_grade</td>
-        <td>N/A</td>
-        <td>VARCHAR2(10)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>비밀번호</td>
-        <td>um_password</td>
-        <td>N/A</td>
-        <td>VARCHAR2(20)</td>
-        <td>Y</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>생년월일</td>
-        <td>um_ymd</td>
-        <td>N/A</td>
-        <td>VARCHAR2(20)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>성별</td>
-        <td>um_gender</td>
-        <td>N/A</td>
-        <td>VARCHAR2(10)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>휴대전화</td>
-        <td>um_tel</td>
-        <td>N/A</td>
-        <td>VARCHAR2(50)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>주소</td>
-        <td>um_addr</td>
-        <td>N/A</td>
-        <td>VARCHAR2(100)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>이메일</td>
-        <td>um_email</td>
-        <td>N/A</td>
-        <td>VARCHAR2(50)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>이메일수신여부</td>
-        <td>um_emailch</td>
-        <td>N/A</td>
-        <td>NUMBER(1)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>SNS수신여부</td>
-        <td>um_snsch</td>
-        <td>N/A</td>
-        <td>NUMBER(1)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>회원가입일시</td>
-        <td>um_regdate</td>
-        <td>N/A</td>
-        <td>DATE</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>맴버십등급(FK)</td>
-        <td>ms_grade</td>
-        <td>N/A</td>
-        <td>VARCHAR2(10)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
 </table>
 <table class="entity" cellpadding="0" cellspacing="0">
     <tr>
-        <td colspan="6" class="header">커뮤니티 (COMMUNITY)</td>
+        <td colspan="6" class="header">커뮤니티 (community)</td>
     </tr>
     <tr class="column-header">
         <td>논리명</td>
@@ -186,7 +90,7 @@
     </tr>
     <tr>
         <td>본문</td>
-        <td>cm_content</td>
+        <td>cm_desc</td>
         <td>N/A</td>
         <td>VARCHAR2(500)</td>
         <td>N</td>
@@ -194,7 +98,7 @@
     </tr>
     <tr>
         <td>조회수</td>
-        <td>cm_cunt</td>
+        <td>cm_cnt</td>
         <td>N/A</td>
         <td>NUMBER(3)</td>
         <td>N</td>
@@ -227,7 +131,7 @@
 </table>
 <table class="entity" cellpadding="0" cellspacing="0">
     <tr>
-        <td colspan="6" class="header">댓글 (COMMENT)</td>
+        <td colspan="6" class="header">댓글 (reply)</td>
     </tr>
     <tr class="column-header">
         <td>논리명</td>
@@ -239,7 +143,7 @@
     </tr>
     <tr>
         <td>일렬번호(PK)</td>
-        <td>c_no</td>
+        <td>r_no</td>
         <td>N/A</td>
         <td>VARCHAR2(50)</td>
         <td>Y</td>
@@ -263,7 +167,7 @@
     </tr>
     <tr>
         <td>댓글본문</td>
-        <td>c_content</td>
+        <td>r_content</td>
         <td>N/A</td>
         <td>VARCHAR2(500)</td>
         <td>N</td>
@@ -271,7 +175,7 @@
     </tr>
     <tr>
         <td>삭제여부</td>
-        <td>c_del</td>
+        <td>r_del</td>
         <td>N/A</td>
         <td>VARCHAR2(10)</td>
         <td>N</td>
@@ -279,7 +183,7 @@
     </tr>
     <tr>
         <td>등록일시</td>
-        <td>c_regdate</td>
+        <td>r_date</td>
         <td>N/A</td>
         <td>DATE</td>
         <td>N</td>
@@ -299,11 +203,19 @@
         <td>설명</td>
     </tr>
     <tr>
-        <td>상품코드번호(PFK)</td>
+        <td>상품코드번호(PK)</td>
         <td>p_pno</td>
         <td>N/A</td>
         <td>VARCHAR2(50)</td>
         <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>브랜드번호(FK)</td>
+        <td>bm_no</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
@@ -323,10 +235,18 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>판매단가</td>
+        <td>정가</td>
         <td>p_price</td>
         <td>N/A</td>
-        <td>NUMBER(10)</td>
+        <td>NUMBER(7)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>판매가</td>
+        <td>p_disprice</td>
+        <td>N/A</td>
+        <td>NUMBER(7)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -395,26 +315,10 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>브랜드번호(FK)</td>
-        <td>bm_no</td>
-        <td>N/A</td>
-        <td>VARCHAR2(20)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
         <td>수량</td>
         <td>p_count</td>
         <td>N/A</td>
-        <td>NUMBER(3)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>카테고리번호(FK)</td>
-        <td>g_cno</td>
-        <td>N/A</td>
-        <td>VARCHAR2(20)</td>
+        <td>NUMBER(4)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -448,18 +352,66 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>회원번호(FK)</td>
-        <td>um_no</td>
+        <td>주문상품번호(FK)</td>
+        <td>o_odno</td>
         <td>N/A</td>
-        <td>VARCHAR2(50)</td>
+        <td>VARCHAR2(20)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>결제번호(FK)</td>
-        <td>ob_payno</td>
+        <td>총가격</td>
+        <td>po_total</td>
         <td>N/A</td>
-        <td>VARCHAR2(20)</td>
+        <td>NUMBER(7)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>포인트적용(FK)</td>
+        <td>pa_no</td>
+        <td>N/A</td>
+        <td>VARCHAR2(10)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>쿠폰적용번호(FK)</td>
+        <td>cpa_no</td>
+        <td>N/A</td>
+        <td>VARCHAR2(10)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>배송업처번호(FK)</td>
+        <td>d_dno</td>
+        <td>N/A</td>
+        <td>VARCHAR2(30)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>배송요청사항</td>
+        <td>po_drequest</td>
+        <td>N/A</td>
+        <td>VARCHAR2(500)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>결제금액</td>
+        <td>po_price</td>
+        <td>N/A</td>
+        <td>NUMBER(7)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>결제수단코드</td>
+        <td>po_ptype</td>
+        <td>N/A</td>
+        <td>VARCHAR2(100)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -488,22 +440,6 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>배송업처번호(FK)</td>
-        <td>d_dno</td>
-        <td>N/A</td>
-        <td>VARCHAR2(30)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>배송요청사항</td>
-        <td>po_drequest</td>
-        <td>N/A</td>
-        <td>VARCHAR2(500)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
         <td>주문상태</td>
         <td>po_status</td>
         <td>N/A</td>
@@ -516,22 +452,6 @@
         <td>po_regdate</td>
         <td>N/A</td>
         <td>DATE</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>주문상품번호(FK)</td>
-        <td>o_odno</td>
-        <td>N/A</td>
-        <td>VARCHAR2(20)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>장바구니번호</td>
-        <td>s_no</td>
-        <td>N/A</td>
-        <td>VARCHAR2(50)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -565,40 +485,8 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>결제수단코드</td>
-        <td>ob_type</td>
-        <td>N/A</td>
-        <td>VARCHAR2(100)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>멤버십등급(FK)</td>
-        <td>ms_grade</td>
-        <td>N/A</td>
-        <td>VARCHAR2(10)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>쿠폰적용번호(FK)</td>
-        <td>cpa_no</td>
-        <td>N/A</td>
-        <td>VARCHAR2(10)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>포인트적용(FK)</td>
-        <td>pa_no</td>
-        <td>N/A</td>
-        <td>VARCHAR2(10)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>배송적용번호 (FK)</td>
-        <td>da_no</td>
+        <td>배송업처번호(FK)</td>
+        <td>d_dno</td>
         <td>N/A</td>
         <td>VARCHAR2(30)</td>
         <td>N</td>
@@ -743,6 +631,70 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
+        <td>장바구니번호(FK)</td>
+        <td>s_no</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>주문상품1</td>
+        <td>o_pno1</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>주문상품2</td>
+        <td>o_pno2</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>주문상품3</td>
+        <td>o_pno3</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>주문상품1 수량</td>
+        <td>o_pno1qu</td>
+        <td>N/A</td>
+        <td>NUMBER(3)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>주문상품2 수량</td>
+        <td>o_pno2qu</td>
+        <td>N/A</td>
+        <td>NUMBER(3)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>주문상품3 수량</td>
+        <td>o_pno3qu</td>
+        <td>N/A</td>
+        <td>NUMBER(3)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>회원번호(FK)</td>
+        <td>um_no</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
         <td>등록일시</td>
         <td>o_date</td>
         <td>N/A</td>
@@ -817,11 +769,19 @@
         <td>설명</td>
     </tr>
     <tr>
-        <td>상품코드번호(PK)</td>
+        <td>상품코드번호(PFK)</td>
         <td>p_pno</td>
         <td>N/A</td>
         <td>VARCHAR2(50)</td>
         <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>코드분류번호(FK)</td>
+        <td>dc_pcno</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
+        <td>N</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
@@ -837,14 +797,6 @@
         <td>c_ex</td>
         <td>N/A</td>
         <td>VARCHAR2(500)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>코드분류번호(FK)</td>
-        <td>dc_pcno</td>
-        <td>N/A</td>
-        <td>VARCHAR2(50)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -873,7 +825,7 @@
         <td>코드분류명</td>
         <td>dc_name</td>
         <td>N/A</td>
-        <td>VARCHAR2((100)</td>
+        <td>VARCHAR2(100)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -881,7 +833,7 @@
         <td>코드분류설명</td>
         <td>dc_ex</td>
         <td>N/A</td>
-        <td>VARCHAR2((500)</td>
+        <td>VARCHAR2(500)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -957,7 +909,7 @@
 </table>
 <table class="entity" cellpadding="0" cellspacing="0">
     <tr>
-        <td colspan="6" class="header">장바구니 (shoppingBasket)</td>
+        <td colspan="6" class="header">장바구니 (basket)</td>
     </tr>
     <tr class="column-header">
         <td>논리명</td>
@@ -1037,14 +989,6 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>찜한날</td>
-        <td>k_date</td>
-        <td>N/A</td>
-        <td>DATE</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
         <td>상품코드번호(FK)</td>
         <td>p_pno</td>
         <td>N/A</td>
@@ -1057,6 +1001,14 @@
         <td>bm_no</td>
         <td>N/A</td>
         <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>찜한날</td>
+        <td>k_date</td>
+        <td>N/A</td>
+        <td>DATE</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -1130,7 +1082,7 @@
         <td>쿠폰내용</td>
         <td>cp_content</td>
         <td>N/A</td>
-        <td>VARCHAR2(500)</td>
+        <td>NUMBER(2)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -1220,16 +1172,8 @@
         <td>리뷰번호(PK)</td>
         <td>rv_no</td>
         <td>N/A</td>
-        <td>VARCHAR2( 50)</td>
-        <td>Y</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>회원번호(FK)</td>
-        <td>um_no</td>
-        <td>N/A</td>
         <td>VARCHAR2(50)</td>
-        <td>N</td>
+        <td>Y</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
@@ -1241,10 +1185,10 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>브랜드번호(FK)</td>
-        <td>bm_no</td>
+        <td>회원번호(FK)</td>
+        <td>um_no</td>
         <td>N/A</td>
-        <td>VARCHAR2(20)</td>
+        <td>VARCHAR2(50)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -1269,6 +1213,14 @@
         <td>rv_date</td>
         <td>N/A</td>
         <td>DATE</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>댓글번호(FK)</td>
+        <td>cm_no</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -1320,7 +1272,7 @@
 </table>
 <table class="entity" cellpadding="0" cellspacing="0">
     <tr>
-        <td colspan="6" class="header">문의 (ask)</td>
+        <td colspan="6" class="header">브랜드문의 (ask)</td>
     </tr>
     <tr class="column-header">
         <td>논리명</td>
@@ -1350,7 +1302,7 @@
         <td>문의내용</td>
         <td>a_content</td>
         <td>N/A</td>
-        <td>VARCHAR2(2000)</td>
+        <td>VARCHAR2(1000)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -1371,6 +1323,14 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
+        <td>PMM</td>
+        <td>a_pmm</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
         <td>문의날짜</td>
         <td>a_date</td>
         <td>N/A</td>
@@ -1383,6 +1343,14 @@
         <td>a_status</td>
         <td>N/A</td>
         <td>VARCHAR2(10)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>답변번호(FK)</td>
+        <td>ar_no</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -1663,22 +1631,6 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>리뷰번호(FK)</td>
-        <td>rv_no</td>
-        <td>N/A</td>
-        <td>VARCHAR2( 50)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>브랜드번호(FK)</td>
-        <td>bm_no</td>
-        <td>N/A</td>
-        <td>VARCHAR2(20)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
         <td>등록내용</td>
         <td>cm_content</td>
         <td>N/A</td>
@@ -1691,6 +1643,14 @@
         <td>cm_date</td>
         <td>N/A</td>
         <td>DATE</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>댓글 상태</td>
+        <td>cm_status</td>
+        <td>N/A</td>
+        <td>VARCHAR2(5)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -1711,32 +1671,8 @@
         <td>답변번호(PK)</td>
         <td>ar_no</td>
         <td>N/A</td>
-        <td>NUMBER(3)</td>
+        <td>VARCHAR2(50)</td>
         <td>Y</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>문의번호(FK)</td>
-        <td>a_no</td>
-        <td>N/A</td>
-        <td>VARCHAR2(50)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>회원번호(FK)</td>
-        <td>um_no</td>
-        <td>N/A</td>
-        <td>VARCHAR2(50)</td>
-        <td>N</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>브랜드번호(FK)</td>
-        <td>bm_no</td>
-        <td>N/A</td>
-        <td>VARCHAR2(20)</td>
-        <td>N</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
@@ -1756,10 +1692,18 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>상담상태</td>
+        <td>댓글 상태</td>
         <td>ar_status</td>
         <td>N/A</td>
-        <td>NUMBER(1)</td>
+        <td>VARCHAR2(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>상담자</td>
+        <td>ar_id</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -1841,7 +1785,7 @@
         <td>포인트</td>
         <td>pa_point</td>
         <td>N/A</td>
-        <td>NUMBER(50)</td>
+        <td>NUMBER(5)</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
@@ -1890,10 +1834,18 @@
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
+    <tr>
+        <td>적립일</td>
+        <td>cpa_date</td>
+        <td>N/A</td>
+        <td>DATE</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
 </table>
 <table class="entity" cellpadding="0" cellspacing="0">
     <tr>
-        <td colspan="6" class="header">입점문의 (brandCheck)</td>
+        <td colspan="6" class="header">입점확인 (brandCheck)</td>
     </tr>
     <tr class="column-header">
         <td>논리명</td>
@@ -1912,7 +1864,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>브랜드번호(FK)</td>
+        <td>브랜드번호</td>
         <td>bm_no</td>
         <td>N/A</td>
         <td>VARCHAR2(20)</td>
@@ -1957,10 +1909,209 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
+        <td>배송가격</td>
+        <td>COL</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
         <td>적용일</td>
         <td>da_date</td>
         <td>N/A</td>
         <td>DATE</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">User (userMember)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>회원번호(PK)</td>
+        <td>um_no</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>회원아이디</td>
+        <td>um_mid</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>닉네임</td>
+        <td>um_ars</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>회원등급</td>
+        <td>um_grade</td>
+        <td>N/A</td>
+        <td>VARCHAR2(10)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>비밀번호</td>
+        <td>um_password</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>생년월일</td>
+        <td>um_ymd</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>성별</td>
+        <td>um_gender</td>
+        <td>N/A</td>
+        <td>VARCHAR2(10)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>주소</td>
+        <td>um_addr</td>
+        <td>N/A</td>
+        <td>VARCHAR2(100)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>이메일</td>
+        <td>um_email</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>휴대전화</td>
+        <td>um_tel</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>SNS수신여부</td>
+        <td>um_snsch</td>
+        <td>N/A</td>
+        <td>VARCHAR2(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>이메일수신여부</td>
+        <td>um_emailch</td>
+        <td>N/A</td>
+        <td>VARCHAR2(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>회원가입일시</td>
+        <td>um_regdate</td>
+        <td>N/A</td>
+        <td>DATE</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>멤버십등급(FK)</td>
+        <td>ms_grade</td>
+        <td>N/A</td>
+        <td>VARCHAR2(10)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">PMM (PMM)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>이름(PK)</td>
+        <td>pmm</td>
+        <td>N/A</td>
+        <td>VARCHAR2(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">옵션 (TABLE)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>상품코드번호(PFK)</td>
+        <td>p_pno</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>옵션1</td>
+        <td>COL</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>옵션2</td>
+        <td>COL2</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>옵션3</td>
+        <td>COL3</td>
+        <td>N/A</td>
+        <td>N/A</td>
         <td>N</td>
         <td>&nbsp;</td>
     </tr>
