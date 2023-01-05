@@ -9,20 +9,4 @@ Day59 https://www.notion.so/Day59_Events-f0a4d8158ee2496088ae9bcf18a806e6
 
 Day60 https://www.notion.so/Day60_Ajax-d847c7f30c144d42928126a3eb5e224a
 
-Day61
 
-Day62
-
-Day63
-
-Day64
-
-Day65
-
-Day66
-
-Day67
-
-Day68
-
-Day69
